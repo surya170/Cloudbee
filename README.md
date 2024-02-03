@@ -1,29 +1,45 @@
+Certainly! Below is an example of how you can set up the README.md file to include instructions on running the Spring Boot application:
+
+```markdown
 # Train Ticket Management System
 
-## High-Level Overview:
+## Overview:
 
 The Train Ticket Management System is a simple Spring Boot application designed to manage train tickets. It adheres to the MVC (Model-View-Controller) architecture and employs a layered structure, including a service layer (`TrainTicketService`), a repository layer (`UserRepository`), and a controller layer (`TrainTicketController`).
 
-## Code Components:
+## Setup:
 
-### 1. Model Classes:
-- **User:** Represents a user with attributes `name`, `seat`, and `section`.
-- **Receipt:** Represents a receipt with details such as `from`, `to`, `user`, `email`, `pricePaid`, and `seat`.
+### Prerequisites:
 
-### 2. Repository Interface:
-- **UserRepository:** An interface defining methods for managing user data, including `findAll`, `save`, `delete`, and `updateSeat`.
+- Java Development Kit (JDK) installed
+- Maven build tool installed
 
-### 3. Repository Implementation:
-- **UserRepositoryImpl:** An implementation of the `UserRepository` interface. It utilizes an in-memory list (`users`) to store user data.
+### Steps:
 
-### 4. Service Layer:
-- **TrainTicketService:** Manages business logic related to train ticket operations. It interacts with the `UserRepository` to perform operations such as purchasing a ticket, viewing users, removing a user, and modifying a user's seat. It also includes a method `allocateSeat` to determine an available seat.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/train-ticket-management.git
+   ```
 
-### 5. Controller:
-- **TrainTicketController:** A Spring MVC controller that exposes RESTful APIs for ticket operations. It uses the `TrainTicketService` to handle requests.
+2. **Navigate to the Project Directory:**
+   ```bash
+   cd train-ticket-management
+   ```
 
-### 6. Main Application Class:
-- **TrainTicketAppApplication:** The main class that starts the Spring Boot application.
+3. **Build the Project:**
+   ```bash
+   mvn clean install
+   ```
+
+4. **Run the Application:**
+   ```bash
+   mvn spring-boot:run
+   ```
+
+   The Spring Boot application will start, and you should see log messages indicating that the application is running.
+
+5. **Access the Application:**
+   Open a Postman and go to [http://localhost:9090](http://localhost:8080) to access the Train Ticket Management System.
 
 ## Interactions:
 
@@ -47,3 +63,7 @@ The Train Ticket Management System is a simple Spring Boot application designed 
    - The controller delegates the request to the `modifySeat` method in `TrainTicketService`.
    - The service updates the user's seat using the `UserRepository`.
 
+For detailed instructions on API usage and further details, please refer to the codebase and the respective JavaDoc documentation within the classes.
+```
+
+Make sure to replace "https://github.com/yourusername/train-ticket-management.git" with the actual URL of your Git repository. Additionally, update any placeholders or details as needed based on your project structure.
